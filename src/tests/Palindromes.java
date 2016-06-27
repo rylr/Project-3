@@ -25,12 +25,6 @@ public class Palindromes {
 		Boolean isPal;
 		norm = norm.toLowerCase();
 		char convert[] = norm.toCharArray();
-		for(int x = 0; x <= norm.length() - 1; x++) {
-			//if(convert[x] == ' ' || '.' ||',' || ';' || ':' || '-' || '_' || '\'') {
-				
-			//}
-		}
-		//if(norm.contains(' ', '.', ',', ';', ':', '-', '_', '\''));
 		String flip = "";
 		
 		for(int i = norm.length() - 1; i >= 0; i--) {
