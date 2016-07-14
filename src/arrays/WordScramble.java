@@ -61,15 +61,26 @@ public class WordScramble implements ActionListener{
 			JOptionPane.showMessageDialog(null, x);
 		}
 		if(e.getSource() == play) {
-			Random r = new Random();
-			String choice = scramble(words.get(r.nextInt(words.size())));
-			JOptionPane.showInputDialog(choice);
+                    Random r = new Random();
+                    String choice = scramble(words.get(r.nextInt(words.size())));
+                    JOptionPane.showInputDialog(choice);
 		}
 	}
 	
 	public String scramble(String tobe) {
 		Random rand = new Random();
-		char tobe2[] = tobe.toCharArray();
+                String swap = "";
+                ArrayList<Integer> place = new ArrayList<Integer>();
+                
+                for(int i = 0; i <= tobe.length() - 1; i++) {
+                    place.add(rand.nextInt(tobe.length()));
+                    
+                    System.out.println(place);
+                }
+                
+                
+		/*
+                char tobe2[] = tobe.toCharArray();
 		
 		for(int i = tobe.length() - 1; i > 0; i--) {
 			int x = rand.nextInt(i + 1);
@@ -77,7 +88,7 @@ public class WordScramble implements ActionListener{
 			tobe2[x] = tobe2[i];
 			tobe2[i] = temp;
 		}
-		
+		*/
 
 			
 		
