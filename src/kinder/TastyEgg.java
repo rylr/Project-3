@@ -31,7 +31,7 @@ class Egg {
 	}
 
 	Toy getEggContents() {
-		// ADD CODE HERE
+			
 	}
 
 }
