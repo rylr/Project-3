@@ -33,7 +33,44 @@ class OncogeneDetector
 {
 	public boolean isOncogene(ArrayList<String> healthySequences, ArrayList<String> cancerSequences, String candidate)
 	{
-		System.out.println(healthySequences.get(0));
+		int healthySamp = 5;
+		int cancerSamp = 6;
+		
+		int healthyCount = 0;
+		int cancerCount = 0;
+		
+		float healthyPer;
+		float cancerPer;
+		
+		String current = "";
+		
+		for(String h : healthySequences) {
+			if(!(h.equals(" "))) {
+				current+=h;
+				if(current.contains(candidate))
+					healthyCount++;
+			}
+			else 
+				current = "";
+		}
+			
+		current = "";
+		for(String c : cancerSequences) {
+			if(!(c.equals(" "))) {
+				current+=c;
+				if(current.contains(candidate)) 
+					cancerCount++;
+			}
+			else 
+				current = "";
+		}	
+		
+		healthyPer = healthyCount / healthySamp;
+		cancerPer = cancerCount / cancerSamp;
+		
+		if(cancerPer > healthyPer)
+			return true;
+		
 		return false;
 	}
 }
